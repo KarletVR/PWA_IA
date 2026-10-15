@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#082b4d">
+<meta name="description" content="Reconocimiento IA: sitio educativo sobre Inteligencia Artificial del CBTis No. 260.">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="imagenes/icons/icon-192.png">
+<link rel="apple-touch-icon" href="imagenes/icons/icon-192.png">
+<link rel="stylesheet" href="css/estilos.css"><title>Reconocimiento IA | IA CBTis 260</title><link rel="stylesheet" href="css/reconocimiento.css"></head>
+<body>
+<!-- ENCABEZADO -->
+<header class="encabezado"><img class="logo" src="imagenes/logo.png" alt="Logo CBTis">
+<div class="institucion"><span>Centro de Bachillerato Tecnológico</span><span>Industrial y de Servicios No. 260</span></div></header>
+<!-- BARRA DE NAVEGACIÓN -->
+<nav class="barra" aria-label="Principal"><div class="nav"><a href="index.html">Inicio</a><a href="que-es-la-ia.html">¿Qué es la IA?</a><a href="glosario.html">Glosario</a><a href="aplicaciones.html">Aplicaciones</a><a href="ventajas-y-desafios.html">Ventajas y desafíos</a><a href="ia-y-educacion.html">IA y Educación</a><a href="reconocimiento.html" class="activo" aria-current="page">Reconocimiento IA</a></div></nav>
+<!-- CUERPO -->
+<main><section class="reconocimiento">
+
+            <div class="contenedor">
+
+
+                <!-- =================================
+                     ENCABEZADO
+                ================================== -->
+
+                <div class="encabezado-reconocimiento">
+
+                    <span class="etiqueta">
+                        INTELIGENCIA ARTIFICIAL
+                    </span>
+
+
+                    <h1>
+                        Reconocimiento de imágenes
+                    </h1>
+
+
+                    <p class="descripcion">
+
+                        Selecciona una fotografía desde tu
+                        dispositivo o utiliza la cámara.
+                        El sistema analizará la imagen mediante
+                        Inteligencia Artificial.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     TARJETA PRINCIPAL
+                ================================== -->
+
+                <div class="tarjeta-reconocimiento">
+
+
+                    <!-- OPCIONES -->
+
+                    <div class="botones-opciones">
+
+
+                        <label
+                            for="imagenInput"
+                            class="boton-opcion"
+                        >
+
+                            <span class="icono-boton">
+                                🖼️
+                            </span>
+
+                            Subir fotografía
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="imagenInput"
+                            accept="image/*"
+                        >
+
+
+                        <button
+                            type="button"
+                            id="activarCamara"
+                            class="boton-opcion"
+                        >
+
+                            <span class="icono-boton">
+                                📷
+                            </span>
+
+                            Usar cámara
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         CÁMARA
+                    ================================== -->
+
+                    <div
+                        id="areaCamara"
+                        class="area-camara oculto"
+                    >
+
+                        <div class="camara-contenedor">
+
+                            <video
+                                id="video"
+                                autoplay
+                                playsinline
+                            ></video>
+
+                        </div>
+
+
+                        <div class="botones-camara">
+
+                            <button
+                                type="button"
+                                id="tomarFoto"
+                                class="boton-principal"
+                            >
+                                Tomar fotografía
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="cerrarCamara"
+                                class="boton-secundario"
+                            >
+                                Cerrar cámara
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         VISTA PREVIA
+                    ================================== -->
+
+                    <div class="vista-previa">
+
+                        <div
+                            id="marcoImagen"
+                            class="marco-imagen oculto"
+                        >
+
+                            <img
+                                id="imagenVista"
+                                alt="Fotografía seleccionada"
+                            >
+
+                        </div>
+
+
+                        <canvas
+                            id="canvas"
+                            class="oculto"
+                        ></canvas>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         ESTADO
+                    ================================== -->
+
+                    <div
+                        id="estado"
+                        class="estado"
+                    >
+                        Esperando una imagen...
+                    </div>
+
+
+
+                    <!-- =================================
+                         RESULTADO
+                    ================================== -->
+
+                    <div
+                        id="resultado"
+                        class="resultado oculto"
+                    >
+
+
+                        <div class="resultado-cabecera">
+
+                            <span class="resultado-etiqueta">
+                                ANÁLISIS COMPLETADO
+                            </span>
+
+
+                            <h2>
+                                Resultado del reconocimiento
+                            </h2>
+
+
+                            <p>
+                                El modelo analizó la fotografía
+                                y comparó ambas categorías.
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- ALE -->
+
+                        <div class="probabilidad">
+
+                            <div class="probabilidad-info">
+
+                                <div class="nombre-clase">
+
+                                    <span class="punto punto-ale">
+                                    </span>
+
+                                    <strong>
+                                        Ale
+                                    </strong>
+
+                                </div>
+
+
+                                <strong
+                                    id="porcentajeAle"
+                                    class="porcentaje"
+                                >
+                                    0.00%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="barra-probabilidad">
+
+                                <div
+                                    id="barraAle"
+                                    class="barra barra-ale"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- NO ALE -->
+
+                        <div class="probabilidad">
+
+                            <div class="probabilidad-info">
+
+                                <div class="nombre-clase">
+
+                                    <span class="punto punto-no-ale">
+                                    </span>
+
+                                    <strong>
+                                        No Ale
+                                    </strong>
+
+                                </div>
+
+
+                                <strong
+                                    id="porcentajeNoAle"
+                                    class="porcentaje"
+                                >
+                                    0.00%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="barra-probabilidad">
+
+                                <div
+                                    id="barraNoAle"
+                                    class="barra barra-no-ale"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             CONCLUSIÓN
+                        ================================== -->
+
+                        <div
+                            id="conclusion"
+                            class="conclusion"
+                        >
+
+                            <div
+                                id="iconoConclusion"
+                                class="icono-conclusion"
+                            >
+                                ✓
+                            </div>
+
+
+                            <div class="texto-conclusion">
+
+                                <span>
+                                    CONCLUSIÓN
+                                </span>
+
+
+                                <h3 id="textoConclusion">
+                                    —
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         ANALIZAR OTRA
+                    ================================== -->
+
+                    <button
+                        type="button"
+                        id="limpiar"
+                        class="boton-secundario boton-limpiar"
+                    >
+                        Analizar otra imagen
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section><section class="sec gris"><div class="wrap"><h2>Cómo se entrenó el modelo</h2><div class="split"><ol class="pasos"><li><b>Proyecto.</b> En teachablemachine.withgoogle.com se crea un «Proyecto de imágenes».</li><li><b>Clases.</b> Se definen las categorías: «Ale» y «No_Ale».</li><li><b>Muestras.</b> Se capturan decenas de fotos por clase, con distintos ángulos e iluminación.</li><li><b>Entrenamiento.</b> Se pulsa «Entrenar modelo» y se prueba con imágenes nuevas.</li><li><b>Exportación.</b> Con «Subir mi modelo» se obtiene un enlace público.</li><li><b>Integración.</b> El enlace se coloca en <code>js/modelo.js</code> y el sitio usa la librería <code>tmImage</code>.</li></ol><img data-img src="imagenes/ia-vision.jpg" alt="Visión por computadora analizando un rostro" loading="lazy"></div></div></section><section class="sec "><div class="wrap"><h2>Consejos para mejores resultados</h2><div class="grid"><article class="card"><div class="icono">💡</div><h3>Buena iluminación</h3><p>Una foto clara y bien iluminada mejora la precisión.</p></article><article class="card"><div class="icono">🙂</div><h3>Rostro de frente</h3><p>El modelo se entrenó con rostros visibles y centrados.</p></article><article class="card"><div class="icono">🖼️</div><h3>Fondo despejado</h3><p>Menos objetos alrededor significa menos confusión.</p></article><article class="card"><div class="icono">🔒</div><h3>Tu privacidad</h3><p>La imagen se analiza en tu dispositivo y no se sube a ningún servidor.</p></article></div></div></section></main>
+<!-- PIE DE PÁGINA -->
+<footer class="pie"><div class="pie-grid">
+<div><h3>CBTis No. 260</h3><p>Disciplina • Trabajo • Tecnología • Futuro</p><p>Formando jóvenes preparados para los retos de la era digital.</p></div>
+<div><h3>Síguenos en redes sociales</h3><div class="redes"><a class="red" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><b>f</b>Facebook</a><a class="red" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><b>◎</b>Instagram</a><a class="red" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><b>▶</b>YouTube</a><a class="red" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><b>♪</b>TikTok</a><a class="red" href="https://x.com/" target="_blank" rel="noopener noreferrer"><b>✕</b>X</a></div></div></div>
+<p class="credito">© 2026 Todos los derechos reservados. · Hecho por: Karlet Alejandra Vasquez Ramirez</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js"></script><script src="js/modelo.js"></script>
+<script src="js/main.js"></script></body></html>
