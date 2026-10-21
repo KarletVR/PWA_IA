@@ -1,0 +1,558 @@
+/* 
+   ESTILOS DE LA PÁGINA DE RECONOCIMIENTO
+========================================= */
+
+.reconocimiento {
+    min-height: calc(100vh - 180px);
+
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8fc,
+            #ffffff
+        );
+}
+
+
+.contenedor {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+.encabezado-reconocimiento {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.encabezado-reconocimiento h1 {
+    font-size: clamp(32px, 5vw, 50px);
+
+    line-height: 1.15;
+
+    margin-bottom: 15px;
+}
+
+
+.descripcion {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #5c6c7c;
+
+    font-size: 17px;
+}
+
+
+.tarjeta-reconocimiento {
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    box-shadow: 0 12px 35px rgba(18, 52, 90, 0.10);
+
+    border: 1px solid #e4e9ee;
+}
+
+
+/* =========================================
+   OPCIONES DE RECONOCIMIENTO
+========================================= */
+
+.botones-opciones {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+
+.boton-opcion {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    border-radius: 9px;
+
+    border: 1px solid #d6dee6;
+
+    background: #ffffff;
+
+    color: #12345a;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.boton-opcion:hover {
+    background: #f1f5f8;
+
+    transform: translateY(-1px);
+}
+
+
+.icono-boton {
+    font-size: 18px;
+}
+
+
+#imagenInput {
+    display: none;
+}
+
+
+/* =========================================
+   CÁMARA
+========================================= */
+
+.area-camara {
+    margin: 25px auto;
+
+    max-width: 650px;
+
+    text-align: center;
+}
+
+
+.camara-contenedor {
+    background: #101820;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+
+#video {
+    width: 100%;
+
+    max-height: 500px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.botones-camara {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   BOTÓN SECUNDARIO
+========================================= */
+
+.boton-secundario {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    border: 1px solid #ccd6df;
+
+    background: #ffffff;
+
+    color: #12345a;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+
+.boton-secundario:hover {
+    background: #f2f5f7;
+}
+
+
+/* =========================================
+   VISTA PREVIA
+========================================= */
+
+.vista-previa {
+    display: flex;
+
+    justify-content: center;
+
+    margin: 25px auto;
+}
+
+
+.marco-imagen {
+    width: 100%;
+
+    max-width: 600px;
+
+    background: #f4f7f9;
+
+    border: 1px solid #dfe5ea;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+
+#imagenVista {
+    width: 100%;
+
+    max-height: 500px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+#canvas {
+    display: none;
+}
+
+
+/* =========================================
+   ESTADO
+========================================= */
+
+.estado {
+    text-align: center;
+
+    color: #5d6d7d;
+
+    font-weight: bold;
+
+    margin: 20px 0;
+}
+
+
+.cargando {
+    display: inline-block;
+
+    width: 16px;
+
+    height: 16px;
+
+    border: 2px solid #d5dce3;
+
+    border-top-color: #12345a;
+
+    border-radius: 50%;
+
+    vertical-align: middle;
+
+    margin-right: 8px;
+
+    animation: girar 0.8s linear infinite;
+}
+
+
+@keyframes girar {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   RESULTADO
+========================================= */
+
+.resultado {
+    max-width: 700px;
+
+    margin: 35px auto 0;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e0e7ed;
+}
+
+
+.resultado-cabecera {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.resultado-etiqueta {
+    font-size: 12px;
+
+    letter-spacing: 1.2px;
+
+    font-weight: bold;
+
+    color: #56718b;
+}
+
+
+.resultado h2 {
+    color: #12345a;
+
+    margin: 5px 0 8px;
+
+    font-size: 27px;
+}
+
+
+.resultado-cabecera p {
+    color: #69798a;
+}
+
+
+/* =========================================
+   PROBABILIDADES
+========================================= */
+
+.probabilidad {
+    margin-bottom: 23px;
+}
+
+
+.probabilidad-info {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+
+.nombre-clase {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #12345a;
+}
+
+
+.punto {
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.punto-ale {
+    background: #12345a;
+}
+
+
+.punto-no-ale {
+    background: #78909c;
+}
+
+
+.porcentaje {
+    color: #12345a;
+
+    font-size: 17px;
+}
+
+
+.barra-probabilidad {
+    width: 100%;
+
+    height: 11px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #e2e8ed;
+}
+
+
+.barra {
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: 20px;
+
+    transition: width 1s ease;
+}
+
+
+.barra-ale {
+    background: #12345a;
+}
+
+
+.barra-no-ale {
+    background: #78909c;
+}
+
+
+/* =========================================
+   CONCLUSIÓN
+========================================= */
+
+.conclusion {
+    margin-top: 30px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-radius: 12px;
+
+    background: #eaf3ed;
+
+    border: 1px solid #cfe1d4;
+}
+
+
+.icono-conclusion {
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #2e6b43;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+
+.texto-conclusion span {
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #5b7462;
+
+    font-weight: bold;
+}
+
+
+.texto-conclusion h3 {
+    color: #28583a;
+
+    font-size: 17px;
+
+    margin-top: 2px;
+}
+
+
+.conclusion-no {
+    background: #f3f0eb;
+
+    border-color: #ded6c9;
+}
+
+
+.conclusion-no .icono-conclusion {
+    background: #6d6254;
+}
+
+
+.conclusion-no .texto-conclusion span {
+    color: #756b5d;
+}
+
+
+.conclusion-no .texto-conclusion h3 {
+    color: #5d5347;
+}
+
+
+/* =========================================
+   BOTÓN LIMPIAR
+========================================= */
+
+.boton-limpiar {
+    display: flex;
+
+    margin: 30px auto 0;
+}
+
+
+/* =========================================
+   ELEMENTO OCULTO
+========================================= */
+
+.oculto {
+    display: none !important;
+}
+
+
+
+.resultado h2:after{display:none}
+@media(max-width:650px){.tarjeta-reconocimiento{padding:20px}.botones-opciones{flex-direction:column}.boton-opcion{width:100%}.resultado{padding:22px 17px}.conclusion{align-items:flex-start}}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#082b4d">
+<meta name="description" content="Algoritmos de búsqueda: sitio educativo sobre Inteligencia Artificial del CBTis No. 260.">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="imagenes/icons/icon-192.png">
+<link rel="apple-touch-icon" href="imagenes/icons/icon-192.png">
+<link rel="stylesheet" href="css/estilos.css"><title>Algoritmos de búsqueda | IA CBTis 260</title></head>
+<body>
+<!-- ENCABEZADO -->
+<header class="encabezado"><img class="logo" src="imagenes/logo.png" alt="Logo CBTis">
+<div class="institucion"><span>Centro de Bachillerato Tecnológico</span><span>Industrial y de Servicios No. 260</span></div></header>
+<!-- BARRA DE NAVEGACIÓN -->
+<nav class="barra" aria-label="Principal"><div class="nav"><a href="index.html">Inicio</a><a href="que-es-la-ia.html">¿Qué es la IA?</a><a href="glosario.html">Glosario</a><a href="aplicaciones.html">Aplicaciones</a><a href="ventajas-y-desafios.html">Ventajas y desafíos</a><a href="ia-y-educacion.html">IA y Educación</a><a href="reconocimiento.html">Reconocimiento IA</a><a href="algoritmos-busqueda.html" class="activo" aria-current="page">Algoritmos de búsqueda</a></div></nav>
+<!-- CUERPO -->
+<main><section class="banner"><div class="wrap"><span class="kicker">BASE DE DATOS</span><h1>Algoritmos de búsqueda</h1><p>Listado de algoritmos de búsqueda con su identificador, nombre, descripción y tipo, consultado desde la base de datos.</p></div></section>
+<section class="sec"><div class="wrap">
+<p id="aviso-algoritmos" class="aviso" role="alert" hidden></p>
+<form id="form-algoritmo" class="form-alg" autocomplete="off"><h2 id="titulo-form">Agregar algoritmo</h2>
+<input type="hidden" id="f-id">
+<label>Nombre<input id="f-nombre" maxlength="100" required></label>
+<label>Tipo<input id="f-tipo" maxlength="50" list="tipos" required></label><datalist id="tipos"></datalist>
+<label class="ancho">Descripción<textarea id="f-descripcion" rows="3" required></textarea></label>
+<div class="ancho"><button type="submit" id="guardar" class="btn">Agregar</button> <button type="button" id="cancelar" class="btn gris-b" hidden>Cancelar</button></div>
+</form></div></section>
+<section class="sec gris"><div class="wrap">
+<div class="barra-bus"><input id="buscar" type="search" placeholder="Buscar por ID, nombre, descripción o tipo…" aria-label="Buscar algoritmos"><span id="contador"></span></div>
+<div class="tabla"><table><thead><tr><th>ID</th><th>Nombre</th><th>Descripción</th><th>Tipo</th><th>Acciones</th></tr></thead><tbody id="cuerpo-algoritmos"><tr><td colspan="5">Cargando…</td></tr></tbody></table></div></div></section>
+</main>
+<!-- PIE DE PÁGINA -->
+<footer class="pie"><div class="pie-grid">
+<div><h3>CBTis No. 260</h3><p>Disciplina • Trabajo • Tecnología • Futuro</p><p>Formando jóvenes preparados para los retos de la era digital.</p></div>
+<div><h3>Síguenos en redes sociales</h3><div class="redes"><a class="red" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><b>f</b>Facebook</a><a class="red" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><b>◎</b>Instagram</a><a class="red" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><b>▶</b>YouTube</a><a class="red" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><b>♪</b>TikTok</a><a class="red" href="https://x.com/" target="_blank" rel="noopener noreferrer"><b>✕</b>X</a></div></div></div>
+<p class="credito">© 2026 Todos los derechos reservados. · Hecho por: Karlet Alejandra Vasquez Ramirez</p></footer>
+<script src="js/main.js"></script><script src="js/datos-iniciales.js"></script><script src="js/algoritmos.js"></script></body></html>
