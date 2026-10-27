@@ -1,0 +1,104 @@
+/* ============================================================
+   GALERÍA — Carrusel profesional (CBTis 260 | IA)
+   Usa las variables de estilos.css: --az, --az2, --ac, --cy, --gris
+   Secciones:
+     1. Filtros por categoría
+     2. Contenedor y escenario (stage)
+     3. Diapositivas (fundido + fondo desenfocado)
+     4. Controles (flechas, contador, play, pantalla completa)
+     5. Barra de progreso del autoplay
+     6. Panel de información
+     7. Miniaturas
+     8. Pantalla completa
+     9. Responsive y accesibilidad
+   ============================================================ */
+
+/* ---------- 1. FILTROS ---------- */
+.gal-filtros{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 22px}
+.gal-filtro{border:2px solid var(--ac);background:#fff;color:var(--ac);font:bold 14px Arial,Helvetica,sans-serif;
+  padding:8px 18px;border-radius:30px;cursor:pointer;transition:.25s}
+.gal-filtro:hover{background:var(--gris)}
+.gal-filtro[aria-pressed="true"]{background:var(--ac);color:#fff}
+.gal-filtro small{opacity:.75;margin-left:4px;font-weight:normal}
+
+/* ---------- 2. CONTENEDOR Y ESCENARIO ---------- */
+.gal{background:#fff;border-radius:22px;padding:14px;box-shadow:0 12px 40px rgba(8,43,77,.16)}
+.gal-stage{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#06203a;outline-offset:3px}
+.gal-stage:focus-visible{outline:3px solid var(--cy)}
+
+/* ---------- 3. DIAPOSITIVAS ---------- */
+.gal-slides{position:absolute;inset:0}
+.gal-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s}
+.gal-slide.activa{opacity:1;visibility:visible;z-index:1}
+/* Fondo: la misma imagen, ampliada y desenfocada (rellena los lados sin deformar) */
+.gal-fondo{position:absolute;inset:-40px;background-size:cover;background-position:center;
+  filter:blur(26px) brightness(.5) saturate(1.25)}
+.gal-slide img{position:relative;width:100%;height:100%;object-fit:contain;
+  transform:scale(1.04);transition:transform 6s ease-out}
+.gal-slide.activa img{transform:scale(1)}
+
+/* ---------- 4. CONTROLES ---------- */
+.gal-btn{position:absolute;z-index:3;display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);
+  background:rgba(8,43,77,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;cursor:pointer;transition:.25s}
+.gal-btn:hover{background:var(--ac)}
+.gal-btn:focus-visible{outline:3px solid var(--cy);outline-offset:2px}
+.gal-btn svg{width:60%;height:60%;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+.gal-flecha{top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%}
+.gal-prev{left:14px}.gal-next{right:14px}
+
+.gal-tools{position:absolute;z-index:3;top:14px;right:14px;display:flex;gap:8px;align-items:center}
+.gal-contador{padding:7px 14px;border-radius:20px;background:rgba(8,43,77,.55);backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:bold;font-size:14px;
+  letter-spacing:1px;font-variant-numeric:tabular-nums}
+.gal-tools .gal-btn{position:static;width:38px;height:38px;border-radius:50%}
+/* Alterna ícono pausa/play según el estado */
+.gal-play .i-play{display:none}.gal.manual .gal-play .i-pause{display:none}.gal.manual .gal-play .i-play{display:block}
+
+/* ---------- 5. BARRA DE PROGRESO ---------- */
+.gal-bar{position:absolute;z-index:3;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.18)}
+.gal-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),var(--cy))}
+.gal-bar span.corriendo{animation:gal-prog var(--t,5s) linear forwards}
+.gal.pausa .gal-bar span{animation-play-state:paused}
+@keyframes gal-prog{from{width:0}to{width:100%}}
+
+/* ---------- 6. PANEL DE INFORMACIÓN ---------- */
+.gal-info{padding:20px 8px 6px;min-height:118px}
+.gal-chip{display:inline-block;background:var(--gris);color:var(--ac);font-weight:bold;font-size:12px;
+  letter-spacing:1.6px;text-transform:uppercase;padding:4px 13px;border-radius:20px}
+.gal-info h3{font-size:clamp(21px,3vw,28px);margin:10px 0 6px}
+.gal-info p{margin:0;max-width:760px}
+
+/* ---------- 7. MINIATURAS ---------- */
+.gal-thumbs{position:relative;display:flex;gap:10px;overflow-x:auto;padding:12px 8px 8px;scrollbar-width:thin;scrollbar-color:var(--ac) transparent}
+.gal-thumbs::-webkit-scrollbar{height:6px}.gal-thumbs::-webkit-scrollbar-thumb{background:var(--ac);border-radius:6px}
+.gal-thumb{flex:0 0 auto;width:124px;height:74px;padding:0;border:0;border-radius:10px;overflow:hidden;cursor:pointer;
+  background:#06203a;opacity:.5;outline:3px solid transparent;outline-offset:-3px;transition:.25s}
+.gal-thumb:hover{opacity:.85}
+.gal-thumb.activa{opacity:1;outline-color:var(--ac);transform:translateY(-3px)}
+.gal-thumb:focus-visible{outline-color:var(--cy)}
+.gal-thumb img{width:100%;height:100%;object-fit:cover}
+
+.gal-ayuda{text-align:center;font-size:14px;color:#5b7894;margin:16px 0 0}
+
+/* ---------- 8. PANTALLA COMPLETA ---------- */
+.gal:fullscreen{display:flex;flex-direction:column;border-radius:0;padding:18px;background:#06203a;overflow:auto}
+.gal:fullscreen .gal-stage{flex:1;aspect-ratio:auto;min-height:0}
+.gal:fullscreen .gal-info{color:#fff;min-height:0}
+.gal:fullscreen .gal-info h3,.gal:fullscreen .gal-info p{color:#fff}
+.gal:fullscreen .gal-thumb{width:100px;height:60px}
+
+/* ---------- 9. RESPONSIVE Y ACCESIBILIDAD ---------- */
+@media(max-width:700px){
+  .gal{padding:8px;border-radius:16px}
+  .gal-stage{aspect-ratio:4/3;border-radius:12px}
+  .gal-flecha{width:38px;height:38px}.gal-prev{left:8px}.gal-next{right:8px}
+  .gal-tools{top:8px;right:8px}.gal-tools .gal-btn{width:34px;height:34px}
+  .gal-thumb{width:88px;height:54px}
+  .gal-info{padding:16px 4px 4px;min-height:132px}
+  .gal-ayuda{font-size:13px}
+}
+/* Si la persona prefiere menos movimiento: sin zoom ni transiciones largas */
+@media(prefers-reduced-motion:reduce){
+  .gal-slide{transition:none}.gal-slide img{transition:none;transform:none}
+}

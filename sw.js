@@ -5,20 +5,20 @@
 
 // Cambia la versión (v1 → v2) cada vez que modifiques el sitio:
 // así el "activate" borra la caché vieja y se descargan archivos nuevos.
-const VERSION = "v6";
+const VERSION = "v7";
 const C_BASE = `ia-base-${VERSION}`;       // archivos esenciales (precaché)
 const C_IMG  = `ia-imagenes-${VERSION}`;   // imágenes (cache first)
 const C_EXT  = `ia-externos-${VERSION}`;   // CDN, modelo de Teachable Machine
 const ACTUALES = [C_BASE, C_IMG, C_EXT];
-const MAX_IMAGENES = 60;                   // límite de imágenes guardadas
+const MAX_IMAGENES = 80;                   // límite de imágenes guardadas
 
 // Archivos mínimos para que el sitio abra sin internet.
 // OJO: si falta UNO solo, addAll falla; por eso las fotos van por caché dinámica.
 const BASE = [
   "./", "./index.html", "./que-es-la-ia.html", "./glosario.html", "./aplicaciones.html",
-  "./ventajas-y-desafios.html", "./ia-y-educacion.html", "./reconocimiento.html", "./algoritmos-busqueda.html", "./js/algoritmos.js", "./js/datos-iniciales.js",
-  "./offline.html", "./manifest.json", "./css/estilos.css", "./css/reconocimiento.css",
-  "./js/main.js", "./js/modelo.js", "./imagenes/logo.png", "./imagenes/robot.png",
+  "./ventajas-y-desafios.html", "./ia-y-educacion.html", "./galeria.html", "./reconocimiento.html", "./algoritmos-busqueda.html", "./js/algoritmos.js", "./js/datos-iniciales.js",
+  "./offline.html", "./manifest.json", "./css/estilos.css", "./css/reconocimiento.css", "./css/galeria.css",
+  "./js/main.js", "./js/modelo.js", "./js/galeria.js", "./imagenes/logo.png", "./imagenes/robot.png",
   "./imagenes/icons/icon-192.png", "./imagenes/icons/icon-512.png"
 ];
 // Dominios externos que sí se guardan (librerías y modelo de IA).

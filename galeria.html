@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#082b4d">
+<meta name="description" content="Galería: sitio educativo sobre Inteligencia Artificial del CBTis No. 260.">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="imagenes/icons/icon-192.png">
+<link rel="apple-touch-icon" href="imagenes/icons/icon-192.png">
+<link rel="stylesheet" href="css/estilos.css"><title>Galería | IA CBTis 260</title><link rel="stylesheet" href="css/galeria.css"></head>
+<body>
+<!-- ENCABEZADO -->
+<header class="encabezado"><img class="logo" src="imagenes/logo.png" alt="Logo CBTis">
+<div class="institucion"><span>Centro de Bachillerato Tecnológico</span><span>Industrial y de Servicios No. 260</span></div></header>
+<!-- BARRA DE NAVEGACIÓN -->
+<nav class="barra" aria-label="Principal"><div class="nav"><a href="index.html">Inicio</a><a href="que-es-la-ia.html">¿Qué es la IA?</a><a href="glosario.html">Glosario</a><a href="aplicaciones.html">Aplicaciones</a><a href="ventajas-y-desafios.html">Ventajas y desafíos</a><a href="ia-y-educacion.html">IA y Educación</a><a href="galeria.html" class="activo" aria-current="page">Galería</a><a href="reconocimiento.html">Reconocimiento IA</a><a href="algoritmos-busqueda.html">Algoritmos de búsqueda</a></div></nav>
+<!-- CUERPO -->
+<main>
+<section class="banner"><div class="wrap"><span class="kicker">GALERÍA VISUAL</span><h1>La Inteligencia Artificial en imágenes</h1><p>Un recorrido visual por los conceptos, tecnologías y aplicaciones que están transformando el mundo.</p></div></section>
+
+<section class="sec"><div class="wrap">
+<span class="kicker">EXPLORA</span><h2>Recorrido visual</h2>
+<p>Navega por categorías, usa las flechas o las miniaturas, y pasa a pantalla completa para ver cada imagen con más detalle.</p>
+
+<!-- Filtros por categoría (los crea js/galeria.js) -->
+<div class="gal-filtros" id="gal-filtros" role="group" aria-label="Filtrar por categoría"></div>
+
+<!-- CARRUSEL -->
+<div class="gal" id="galeria" role="region" aria-roledescription="carrusel" aria-label="Galería de imágenes sobre Inteligencia Artificial">
+  <div class="gal-stage" id="gal-stage" tabindex="0">
+    <div class="gal-slides" id="gal-slides"></div>
+
+    <button type="button" class="gal-btn gal-flecha gal-prev" id="gal-prev" aria-label="Imagen anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" class="gal-btn gal-flecha gal-next" id="gal-next" aria-label="Imagen siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+
+    <div class="gal-tools">
+      <span class="gal-contador" id="gal-contador">01 / 26</span>
+      <button type="button" class="gal-btn gal-play" id="gal-play" aria-pressed="false" aria-label="Pausar reproducción automática">
+        <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+      </button>
+      <button type="button" class="gal-btn" id="gal-fs" aria-label="Pantalla completa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    </div>
+
+    <div class="gal-bar" aria-hidden="true"><span id="gal-progreso"></span></div>
+  </div>
+
+  <div class="gal-info" aria-live="polite" aria-atomic="true">
+    <span class="gal-chip" id="gal-chip"></span>
+    <h3 id="gal-titulo"></h3>
+    <p id="gal-desc"></p>
+  </div>
+
+  <div class="gal-thumbs" id="gal-thumbs" aria-label="Miniaturas"></div>
+</div>
+<p class="gal-ayuda">Tip: usa las teclas ← → del teclado o desliza con el dedo para cambiar de imagen.</p>
+</div></section>
+</main>
+<!-- PIE DE PÁGINA -->
+<footer class="pie"><div class="pie-grid">
+<div><h3>CBTis No. 260</h3><p>Disciplina • Trabajo • Tecnología • Futuro</p><p>Formando jóvenes preparados para los retos de la era digital.</p></div>
+<div><h3>Síguenos en redes sociales</h3><div class="redes"><a class="red" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><b>f</b>Facebook</a><a class="red" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><b>◎</b>Instagram</a><a class="red" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><b>▶</b>YouTube</a><a class="red" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><b>♪</b>TikTok</a><a class="red" href="https://x.com/" target="_blank" rel="noopener noreferrer"><b>✕</b>X</a></div></div></div>
+<p class="credito">© 2026 Todos los derechos reservados. · Hecho por: Karlet Alejandra Vasquez Ramirez</p></footer>
+<script src="js/main.js"></script>
+<script src="js/galeria.js"></script></body></html>
